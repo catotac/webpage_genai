@@ -1,156 +1,150 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #06b6d4;
+    --background: #f9fafb;
+    --card-bg: #ffffff;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --accent: #8b5cf6;
+    --success: #059669;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: var(--background);
     line-height: 1.6;
+    color: var(--text-primary);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.5rem;
 }
 
+/* Header Styles */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(to right, var(--primary-color), var(--accent));
     color: white;
-    padding: 2rem 0;
+    padding: 3rem 0;
     margin-bottom: 2rem;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.navigation {
-    background-color: #34495e;
-    padding: 1rem 0;
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.1;
 }
 
-.navigation a {
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation */
+.top-nav {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-button {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     text-decoration: none;
-    margin-right: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navigation a:hover {
-    color: #3498db;
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Lecture Grid Styles */
+/* Lecture Grid */
 .lecture-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .lecture-card {
-    background-color: white;
-    border-radius: 10px;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .lecture-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .lecture-title {
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 1.25rem;
+    font-weight: 600;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #3498db;
     padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
 }
 
-/* Application Card Styles */
-.app-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.app-title {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 0.5rem;
-}
-
-.app-section {
-    margin: 1.5rem 0;
-}
-
-.app-section h3 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.feature-list {
-    list-style-type: none;
-    margin: 1rem 0;
-}
-
-.feature-list li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.feature-list li::before {
-    content: "•";
-    color: #3498db;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-.access-button {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 1rem;
-}
-
-.access-button:hover {
-    background-color: #2980b9;
-}
-
-.screenshot {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    background-color: #eee;
-    margin: 1rem 0;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
+.lecture-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 /* Resource Sections */
-.resource-section {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 0.5rem;
+.resources {
+    background-color: var(--background);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    margin-top: auto;
 }
 
 .resource-title {
-    color: #2c3e50;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
 }
 
 .resource-list {
@@ -158,66 +152,195 @@ header {
 }
 
 .resource-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.resource-list li:last-child {
+    margin-bottom: 0;
+}
+
+.resource-list li::before {
+    content: "→";
+    color: var(--accent);
+    margin-right: 0.5rem;
 }
 
 .resource-list a {
-    color: #3498db;
+    color: var(--primary-color);
     text-decoration: none;
-    display: inline-block;
-    padding: 0.25rem 0;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .resource-list a:hover {
-    color: #2980b9;
+    color: var(--primary-hover);
     text-decoration: underline;
 }
 
-/* Visitor Counter */
-.visitor-counter {
-    background-color: #2c3e50;
-    color: white;
+/* Application Page Specific Styles */
+.app-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.app-title {
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+}
+
+.app-section {
+    margin: 1.5rem 0;
+}
+
+.app-section h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.feature-list li {
+    background-color: var(--background);
     padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-    margin: 2rem auto;
-    max-width: 300px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
 }
 
-.visitor-count {
-    font-size: 1.5rem;
+.feature-list li::before {
+    content: "✓";
+    color: var(--success);
+    margin-right: 0.75rem;
     font-weight: bold;
-    color: #3498db;
-    background: white;
-    padding: 0.5rem 1rem;
-    border-radius: 3px;
-    margin-top: 0.5rem;
-    display: inline-block;
 }
 
+.access-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.access-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.screenshot {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background-color: var(--background);
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+/* Footer */
 footer {
+    background-color: var(--card-bg);
     text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    color: #666;
-    border-top: 1px solid #ddd;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lecture-card, .app-card {
+    animation: fadeIn 0.5s ease-out;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .nav-button {
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
     .lecture-grid {
         grid-template-columns: 1fr;
     }
 
-    .container {
-        padding: 10px;
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .app-card {
+        padding: 1.5rem;
+    }
+
+    .app-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 0;
     }
 
     header h1 {
         font-size: 1.5rem;
     }
 
-    .app-card {
+    .nav-button {
+        font-size: 1.125rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .lecture-card {
         padding: 1rem;
+    }
+
+    .lecture-title {
+        font-size: 1.125rem;
     }
 }

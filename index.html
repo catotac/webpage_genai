@@ -5,39 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenAI Training Series</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Lecture Series on Generative Artificial Intelligence and Large Language Models</h1>
-            <nav style="margin-top: 1rem;">
-                <a href="applications.html" style="color: white; text-decoration: none; padding: 0.5rem 1rem; background-color: #34495e; border-radius: 5px;">View GenAI Applications</a>
+            <nav class="top-nav">
+                <a href="applications.html" class="nav-button">GenAI Applications</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <!-- Visitor Counter -->
-        <div class="visitor-counter">
-            <p>Total Visitors</p>
-            <div class="visitor-count" id="visitor-count">
-                <!-- VISITS:START -->
-                ![Visitor Count](https://img.shields.io/badge/Visitors-0-blue)
-                <!-- VISITS:END -->
-            </div>
-        </div>
-
         <div class="lecture-grid">
             <!-- Lecture 1 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">1. Introduction to GenAI and Applications</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">1. Introduction to GenAI and Applications</h2>
+                    <p class="lecture-description">
+                        Overview of Generative AI, current applications, and future trends in the industry.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture1/slides.pdf">Lecture Slides (PDF)</a></li>
                             <li><a href="lectures/lecture1/recording.mp4">Lecture Recording</a></li>
-                            <li><a href="lectures/lecture1/reading.pdf">Additional Reading Materials</a></li>
+                            <li><a href="lectures/lecture1/reading.pdf">Additional Reading</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,9 +39,12 @@
 
             <!-- Lecture 2 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">2. LLM: Backbone of GenAI</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">2. LLM: Backbone of GenAI</h2>
+                    <p class="lecture-description">
+                        Deep dive into Large Language Models, their core concepts, and fundamental principles.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture2/slides.pdf">Lecture Slides (PDF)</a></li>
@@ -60,9 +57,12 @@
 
             <!-- Lecture 3 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">3. LLM Architectures: Anatomy of Transformers</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">3. LLM Architectures: Anatomy of Transformers</h2>
+                    <p class="lecture-description">
+                        Comprehensive look at transformer architectures and their implementation details.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture3/slides.pdf">Lecture Slides (PDF)</a></li>
@@ -75,9 +75,12 @@
 
             <!-- Lecture 4 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">4. GenAI: Applications of LLM in Bank Context</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">4. GenAI: Applications of LLM in Bank Context</h2>
+                    <p class="lecture-description">
+                        Practical applications and implementation strategies in banking sector.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture4/slides.pdf">Lecture Slides (PDF)</a></li>
@@ -90,9 +93,12 @@
 
             <!-- Lecture 5 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">5. Intelligent Document Search using RAG</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">5. Intelligent Document Search using RAG</h2>
+                    <p class="lecture-description">
+                        Exploring Retrieval Augmented Generation for enhanced document search capabilities.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture5/slides.pdf">Lecture Slides (PDF)</a></li>
@@ -105,9 +111,12 @@
 
             <!-- Lecture 6 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">6. Evaluation and Metrics for GenAI</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">6. Evaluation and Metrics for GenAI</h2>
+                    <p class="lecture-description">
+                        Understanding performance metrics and evaluation frameworks for GenAI systems.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture6/slides.pdf">Lecture Slides (PDF)</a></li>
@@ -120,14 +129,17 @@
 
             <!-- Lecture 7 -->
             <div class="lecture-card">
-                <h2 class="lecture-title">7. Ethical Considerations and Bias in GenAI</h2>
-                <div class="resources">
-                    <div class="resource-section">
+                <div class="card-content">
+                    <h2 class="lecture-title">7. Ethical Considerations and Bias in GenAI</h2>
+                    <p class="lecture-description">
+                        Addressing ethical challenges and bias mitigation in GenAI implementations.
+                    </p>
+                    <div class="resources">
                         <h3 class="resource-title">Lecture Materials</h3>
                         <ul class="resource-list">
                             <li><a href="lectures/lecture7/slides.pdf">Lecture Slides (PDF)</a></li>
                             <li><a href="lectures/lecture7/recording.mp4">Lecture Recording</a></li>
-                            <li><a href="lectures/lecture7/case_studies.pdf">Case Studies</a></li>
+                            <li><a href="lectures/lecture7/case_studies.pdf">Ethics Case Studies</a></li>
                         </ul>
                     </div>
                 </div>
